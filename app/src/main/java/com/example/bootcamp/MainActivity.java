@@ -17,16 +17,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
+    public void greeting(View view){
         button = findViewById(R.id.mainButton);
         textView = findViewById(R.id.mainName);
-
-        button.setOnClickListener(v -> {
-            String str = textView.getText().toString();
-            Intent intent = new Intent(MainActivity.this, GreetingActivity.class);
-            intent.putExtra("name", str);
-            startActivity(intent);
-        });
+        String str = textView.getText().toString();
+        Intent intent = new Intent(MainActivity.this, GreetingActivity.class);
+        intent.putExtra("name", str);
+        startActivity(intent);
     }
 
 }
